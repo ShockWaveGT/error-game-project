@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ErrorGameProjectGameMode.h"
-#include "ErrorGameProjectCharacter.h"
+#include "ErrorGameProject/public/ErrorGameProjectGameMode.h"
 #include "UObject/ConstructorHelpers.h"
 
 AErrorGameProjectGameMode::AErrorGameProjectGameMode()

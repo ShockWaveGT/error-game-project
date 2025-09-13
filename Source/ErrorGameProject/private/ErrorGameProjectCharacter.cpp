@@ -1,6 +1,10 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "ErrorGameProjectCharacter.h"
+
+#include "ErrorGameProject/public/ErrorGameProjectCharacter.h"
+
+#include <string>
+
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -9,6 +13,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "FrameTypes.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -25,7 +30,7 @@ AErrorGameProjectCharacter::AErrorGameProjectCharacter()
 	bUseControllerRotationRoll = false;
 
 	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
+	GetCharacterMovement()->bOrientRotationToMovement = false; // Character moves in the direction of input...	
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f); // ...at this rotation rate
 
 	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
@@ -98,16 +103,41 @@ void AErrorGameProjectCharacter::Move(const FInputActionValue& Value)
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
-
+		//const FRotator YawRotation(0, 0, 0);
+		
 		// get forward vector
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-	
+
 		// get right vector 
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-
+		
 		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);
+		
+		if(Value.Get<FVector2d>().X == -1)
+		{
+			//UE_LOG(LogTemp, Warning, TEXT("Izquierda"));
+			FRotator tempMesh = GetMesh()->GetRelativeRotation();
+			double meshMax = -60;
+			tempMesh.Pitch = FMath::Lerp(tempMesh.Pitch, meshMax, 0.01f);
+			GetMesh()->SetRelativeRotation(tempMesh);
+			UE_LOG(LogTemp, Warning, TEXT("X: %f, Y: %f, Z: %f"), GetMesh()->GetRelativeRotation().Roll, GetMesh()->GetRelativeRotation().Pitch, GetMesh()->GetRelativeRotation().Yaw);
+
+		}
+		else if(Value.Get<FVector2d>().X == 1)
+		{
+			//UE_LOG(LogTemp, Warning, TEXT("Derecha"));
+			FRotator tempMesh = GetMesh()->GetRelativeRotation();
+			//tempMesh.Pitch = 60;
+			double meshMax = 60;
+			tempMesh.Pitch = FMath::Lerp(tempMesh.Pitch , meshMax, 0.01f);
+			GetMesh()->SetRelativeRotation(tempMesh);
+			
+			UE_LOG(LogTemp, Warning, TEXT("X: %f, Y: %f, Z: %f"), GetMesh()->GetRelativeRotation().Roll, GetMesh()->GetRelativeRotation().Pitch, GetMesh()->GetRelativeRotation().Yaw);
+
+		};
+	
 	}
 }
 
