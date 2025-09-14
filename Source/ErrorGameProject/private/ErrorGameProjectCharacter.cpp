@@ -32,6 +32,7 @@ AErrorGameProjectCharacter::AErrorGameProjectCharacter()
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = false; // Character moves in the direction of input...	
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f); // ...at this rotation rate
+	
 
 	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
 	// instead of recompiling to adjust them
@@ -117,21 +118,18 @@ void AErrorGameProjectCharacter::Move(const FInputActionValue& Value)
 		
 		if(Value.Get<FVector2d>().X == -1)
 		{
-			//UE_LOG(LogTemp, Warning, TEXT("Izquierda"));
 			FRotator tempMesh = GetMesh()->GetRelativeRotation();
-			double meshMax = -60;
-			tempMesh.Pitch = FMath::Lerp(tempMesh.Pitch, meshMax, 0.01f);
+			double meshMax = -45;
+			tempMesh.Pitch = FMath::Lerp(tempMesh.Pitch, meshMax, 0.04f);
 			GetMesh()->SetRelativeRotation(tempMesh);
 			UE_LOG(LogTemp, Warning, TEXT("X: %f, Y: %f, Z: %f"), GetMesh()->GetRelativeRotation().Roll, GetMesh()->GetRelativeRotation().Pitch, GetMesh()->GetRelativeRotation().Yaw);
 
 		}
 		else if(Value.Get<FVector2d>().X == 1)
 		{
-			//UE_LOG(LogTemp, Warning, TEXT("Derecha"));
 			FRotator tempMesh = GetMesh()->GetRelativeRotation();
-			//tempMesh.Pitch = 60;
-			double meshMax = 60;
-			tempMesh.Pitch = FMath::Lerp(tempMesh.Pitch , meshMax, 0.01f);
+			double meshMax = 45;
+			tempMesh.Pitch = FMath::Lerp(tempMesh.Pitch , meshMax, 0.04f);
 			GetMesh()->SetRelativeRotation(tempMesh);
 			
 			UE_LOG(LogTemp, Warning, TEXT("X: %f, Y: %f, Z: %f"), GetMesh()->GetRelativeRotation().Roll, GetMesh()->GetRelativeRotation().Pitch, GetMesh()->GetRelativeRotation().Yaw);
@@ -144,14 +142,14 @@ void AErrorGameProjectCharacter::Move(const FInputActionValue& Value)
 void AErrorGameProjectCharacter::Look(const FInputActionValue& Value)
 {
 	// input is a Vector2D
-	FVector2D LookAxisVector = Value.Get<FVector2D>();
+	/*FVector2D LookAxisVector = Value.Get<FVector2D>();
 
 	if (Controller != nullptr)
 	{
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
-	}
+	}*/
 }
 
 
