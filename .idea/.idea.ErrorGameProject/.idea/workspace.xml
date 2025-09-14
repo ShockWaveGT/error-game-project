@@ -7,15 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f714fb0-59ea-4e06-a081-d22f4550c2e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ErrorGameProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ErrorGameProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/BP_CannonSpawnerTest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/BP_CannonSpawnerTest.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/BP_Spawner.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/BP_Spawner.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/GameplaySystems/ObjectPool/AC_ObjectPool.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/GameplaySystems/ObjectPool/AC_ObjectPool.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/Obstacles/BP_Cannon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/Obstacles/BP_Cannon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/FirstLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/FirstLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Menu.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Menu.umap" afterDir="false" />
-    </list>
+    <list default="true" id="3f714fb0-59ea-4e06-a081-d22f4550c2e6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +128,7 @@
       <workItem from="1757715615129" duration="658000" />
       <workItem from="1757780386144" duration="13115000" />
       <workItem from="1757801986910" duration="3465000" />
-      <workItem from="1757864708708" duration="4220000" />
+      <workItem from="1757864708708" duration="4533000" />
     </task>
     <servers />
   </component>
