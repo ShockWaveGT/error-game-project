@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f714fb0-59ea-4e06-a081-d22f4550c2e6" name="Changes" comment="" />
+    <list default="true" id="3f714fb0-59ea-4e06-a081-d22f4550c2e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ErrorGameProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ErrorGameProject/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +130,7 @@
       <workItem from="1757715615129" duration="658000" />
       <workItem from="1757780386144" duration="13115000" />
       <workItem from="1757801986910" duration="3465000" />
-      <workItem from="1757864708708" duration="4815000" />
+      <workItem from="1757864708708" duration="5913000" />
     </task>
     <servers />
   </component>
